@@ -1,9 +1,9 @@
-<h1>Make a new Review for <%= @restaurant.name %></h1>
 
+<div class="container">
+<h1 class="mb-4 mt-3">Make a new Review for <%= @restaurant.name %></h1>
 <%= simple_form_for [@restaurant, @review] do |f| %>
-  <%= f.label :content %>
   <%= f.input :content %>
-  <%= f.label :rating %>
   <%= f.input :rating %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn btn-success" %>
 <% end %>
+</div>

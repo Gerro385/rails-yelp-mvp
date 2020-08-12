@@ -1,5 +1,5 @@
-<h1>Make a new Restaurant</h1>
-
+<div class="container">
+<h1 class="mb-4 mt-3">Make a new Restaurant</h1>
 <%= simple_form_for [@restaurant] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -8,5 +8,6 @@
   <%= f.label :phone_number %>
   <%= f.text_field :phone_number %>
   <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn btn-success"%>
 <% end %>
+</div>

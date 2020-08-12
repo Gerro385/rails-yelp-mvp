@@ -1,7 +1,29 @@
-<h1><%= @restaurant.name %></h1>
-<h2><%= @restaurant.category %></h2>
-<h2><%= @restaurant.address %></h2>
-<h2><%= @restaurant.phone_number %></h2>
+<h1></h1>
+<h2></h2>
+<h2></h2>
+<h2></h2>
 
-<%= link_to "Add a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>
-<%= link_to "Back to All Restaurants", restaurants_path, class: "btn btn-primary"%>
+
+<div class="banner mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80);">
+  <div class="container">
+    <h1><strong><%= @restaurant.name %></strong></h1>
+    <p><%= @restaurant.category %> | <%= @restaurant.address %> | <%= @restaurant.phone_number %></p>
+    <%= link_to "Add a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>
+    <%= link_to "Back to All Restaurants", restaurants_path, class: "btn btn-primary"%>
+  </div>
+</div>
+
+<div class="container mt-4">
+<h1>Reviews</h1>
+<ul class="p-0 mt-3">
+<% @restaurant.reviews.each do |review| %>
+<div class="card-trip mb-3">
+  <div class="card-trip-infos">
+    <div>
+      <p>Rating: <%= review.rating %> | <%= review.content %></p>
+    </div>
+  </div>
+</div>
+<% end %>
+</ul>
+</div>

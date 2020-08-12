@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review.restaurant = @restaurant
     if @review.save
-      redirect_to @review, notice: 'Review was successfully created.'
+      redirect_to @restaurant, notice: 'Review was successfully created.'
       # redirect_to restaurant_reviews_path(@review)
     else
       render "restaurants/show"
@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:context, :rating)
+    params.require(:review).permit(:content, :rating)
   end
   
 

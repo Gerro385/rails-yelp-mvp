@@ -1,7 +1,7 @@
 
 
 <div class="container">
-<h1>All Restaurants</h1> <%= link_to "Create a new Restaurant", new_restaurant_path, class: "btn btn-primary" %>
+<h1>All Restaurants</h1> <%= link_to "Create a new Restaurant", new_restaurant_path, class: "btn btn-primary mb-3 " %>
 <ul class="p-0">
 <% @restaurants.each do |restaurant| %>
 <div class="card-trip mb-3">
@@ -9,12 +9,12 @@
   <div class="card-trip-infos">
     <div>
       <%= link_to  restaurant.name, restaurant_path(restaurant), class: "btn btn-success" %>
-      <p><%= restaurant.address %> | <%= restaurant.phone_number %></p>
+      <p><%= restaurant.address %> | <%= restaurant.phone_number %> | <%= restaurant.reviews.count %> reviews</p>
     </div>
     <h2 class="card-trip-pricing"><%= restaurant.category %></h2>
   </div>
 </div>
 <% end %>
-<a href="" class="btn btn-primary">Cool button</a>
+<a href="" class="btn btn-danger">Go up again</a>
 </ul>
 </div>

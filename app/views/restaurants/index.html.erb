@@ -1,0 +1,20 @@
+
+
+<div class="container">
+<h1>All Restaurants</h1> <%= link_to "Create a new Restaurant", new_restaurant_path, class: "btn btn-primary" %>
+<ul class="p-0">
+<% @restaurants.each do |restaurant| %>
+<div class="card-trip mb-3">
+  <img width="100px" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+  <div class="card-trip-infos">
+    <div>
+      <%= link_to  restaurant.name, restaurant_path(restaurant), class: "btn btn-success" %>
+      <p><%= restaurant.address %> | <%= restaurant.phone_number %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= restaurant.category %></h2>
+  </div>
+</div>
+<% end %>
+<a href="" class="btn btn-primary">Cool button</a>
+</ul>
+</div>
